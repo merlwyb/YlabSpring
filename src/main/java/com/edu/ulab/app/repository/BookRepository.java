@@ -14,27 +14,26 @@ public class BookRepository {
     private long id = 1;
     private final Map<Long, Book> bookMap = new HashMap<>();
 
-    public BookDto create(BookDto bookDto) {
-        checkOnNullAndEmptyValues(bookDto);
-        Book book = new Book(bookDto.getUserId(), bookDto.getTitle(), bookDto.getAuthor(), bookDto.getPageCount());
-        bookMap.put(id, book);
-        bookDto.setId(id++);
-
-        return bookDto;
+    public Book create(Book book) {
+        if (checkOnNullAndEmptyValues(book))
+            return new Book();
+        book.setId(id);
+        bookMap.put(id++, book);
+        return book;
     }
 
-    public BookDto update(BookDto bookDto) {
-        if (bookDto.getId() != null) {
-            checkOnNullAndEmptyValues(bookDto);
-            Book book = new Book(bookDto.getUserId(), bookDto.getTitle(), bookDto.getAuthor(), bookDto.getPageCount());
-            bookMap.put(bookDto.getUserId(), book);
+    public Book update(Book book) {
+        if (book.getId() != null) {
+            if (checkOnNullAndEmptyValues(book))
+                return new Book();
+            bookMap.put(book.getId(), book);
         } else {
-            return create(bookDto);
+            return create(book);
         }
-        return bookDto;
+        return book;
     }
 
-    public List<BookDto> getAllByUserId(Long userId) {
+    public List<Book> getAllByUserId(Long userId) {
         return bookMap.entrySet()
                 .stream()
                 .filter(a -> a.getValue().getUserId().equals(userId))
@@ -43,20 +42,12 @@ public class BookRepository {
                 .toList();
     }
 
-    public BookDto getById(Long id) {
+    public Book getById(Long id) {
         Book book = bookMap.get(id);
         if (book == null) {
-            throw new NoSuchEntityException("Book was not found with id = " + id);
+            return new Book();
         }
-
-        BookDto bookDto = new BookDto();
-        bookDto.setId(id);
-        bookDto.setUserId(book.getUserId());
-        bookDto.setTitle(book.getTitle());
-        bookDto.setAuthor(book.getAuthor());
-        bookDto.setPageCount(book.getPageCount());
-
-        return bookDto;
+        return book;
     }
 
     public void deleteAllByUserId(Long userId) {
@@ -72,12 +63,11 @@ public class BookRepository {
         bookMap.remove(id);
     }
 
-    private void checkOnNullAndEmptyValues(BookDto bookDto) {
-        if (bookDto.getTitle() == null ||
-                bookDto.getTitle().matches("^\s*$") ||
-                bookDto.getAuthor() == null ||
-                bookDto.getAuthor().matches("^\s*$") ||
-                bookDto.getPageCount() <= 0)
-            throw new EmptyFieldException("Book cannot have an empty or null values");
+    private boolean checkOnNullAndEmptyValues(Book book) {
+        return book.getTitle() == null ||
+                book.getTitle().matches("^\s*$") ||
+                book.getAuthor() == null ||
+                book.getAuthor().matches("^\s*$") ||
+                book.getPageCount() <= 0;
     }
 }

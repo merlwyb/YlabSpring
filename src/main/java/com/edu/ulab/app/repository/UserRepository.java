@@ -1,9 +1,6 @@
 package com.edu.ulab.app.repository;
 
-import com.edu.ulab.app.dto.UserDto;
 import com.edu.ulab.app.entity.User;
-import com.edu.ulab.app.exception.EmptyFieldException;
-import com.edu.ulab.app.exception.NoSuchEntityException;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -14,39 +11,31 @@ public class UserRepository {
     private long id = 1;
     private final Map<Long, User> userMap = new HashMap<>();
 
-    public UserDto create(UserDto userDto) {
-        checkOnNullAndEmptyValues(userDto);
-        User user = new User(userDto.getFullName(), userDto.getTitle(), userDto.getAge());
-        userMap.put(id, user);
-        userDto.setId(id++);
-
-        return userDto;
+    public User create(User user) {
+        if (checkOnNullAndEmptyValues(user))
+            return new User();
+        user.setId(id);
+        userMap.put(id++, user);
+        return user;
     }
 
-    public UserDto update(UserDto userDto) {
-        if (userDto.getId() != null) {
-            checkOnNullAndEmptyValues(userDto);
-            User user = new User(userDto.getFullName(), userDto.getTitle(), userDto.getAge());
-            userMap.put(userDto.getId(), user);
+    public User update(User user) {
+        if (user.getId() != null) {
+            if (checkOnNullAndEmptyValues(user))
+                return new User();
+            userMap.put(user.getId(), user);
         } else {
-            return create(userDto);
+            return create(user);
         }
-        return userDto;
+        return user;
     }
 
-    public UserDto getById(Long id) {
+    public User getById(Long id) {
         User user = userMap.get(id);
         if (user == null) {
-            throw new NoSuchEntityException("User was not found with id = " + id);
+            return new User();
         }
-
-        UserDto userDto = new UserDto();
-        userDto.setId(id);
-        userDto.setFullName(user.getFullName());
-        userDto.setTitle(user.getTitle());
-        userDto.setAge(user.getAge());
-
-        return userDto;
+        return user;
     }
 
     public void deleteById(Long id) {
@@ -57,13 +46,12 @@ public class UserRepository {
         return userMap.containsKey(id);
     }
 
-    private void checkOnNullAndEmptyValues(UserDto userDto) {
-        if (userDto.getFullName() == null ||
-                userDto.getFullName().matches("^\s*$") ||
-                userDto.getTitle() == null ||
-                userDto.getTitle().matches("^\s*$") ||
-                userDto.getAge() <= 0)
-            throw new EmptyFieldException("User cannot have an empty or null values");
+    private boolean checkOnNullAndEmptyValues(User user) {
+        return user.getFullName() == null ||
+                user.getFullName().matches("^\s*$") ||
+                user.getTitle() == null ||
+                user.getTitle().matches("^\s*$") ||
+                user.getAge() <= 0;
     }
 
 

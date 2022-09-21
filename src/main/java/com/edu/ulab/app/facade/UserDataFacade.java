@@ -2,7 +2,8 @@ package com.edu.ulab.app.facade;
 
 import com.edu.ulab.app.dto.BookDto;
 import com.edu.ulab.app.dto.UserDto;
-import com.edu.ulab.app.exception.RepositoryException;
+import com.edu.ulab.app.exception.EmptyFieldException;
+import com.edu.ulab.app.exception.NoSuchEntityException;
 import com.edu.ulab.app.mapper.BookMapper;
 import com.edu.ulab.app.mapper.UserMapper;
 import com.edu.ulab.app.service.BookService;
@@ -44,28 +45,27 @@ public class UserDataFacade {
         UserDto createdUser = userService.createUser(userDto);
         log.info("Created user: {}", createdUser);
 
-        try {
-            List<Long> bookIdList = userBookRequest.getBookRequests()
-                    .stream()
-                    .filter(Objects::nonNull)
-                    .map(bookMapper::bookRequestToBookDto)
-                    .peek(bookDto -> bookDto.setUserId(createdUser.getId()))
-                    .peek(mappedBookDto -> log.info("mapped book: {}", mappedBookDto))
-                    .map(bookService::createBook)
-                    .peek(createdBook -> log.info("Created book: {}", createdBook))
-                    .map(BookDto::getId)
-                    .toList();
-            log.info("Collected book ids: {}", bookIdList);
+        List<Long> bookIdList = userBookRequest.getBookRequests()
+                .stream()
+                .filter(Objects::nonNull)
+                .map(bookMapper::bookRequestToBookDto)
+                .peek(bookDto -> bookDto.setUserId(createdUser.getId()))
+                .peek(mappedBookDto -> log.info("mapped book: {}", mappedBookDto))
+                .map(bookService::createBook)
+                .peek(createdBook -> log.info("Created book: {}", createdBook))
+                .map(BookDto::getId)
+                .toList();
+        log.info("Collected book ids: {}", bookIdList);
 
-            return UserBookResponse.builder()
-                    .userId(createdUser.getId())
-                    .booksIdList(bookIdList)
-                    .build();
-        } catch (RepositoryException e) {
-            bookService.deleteAllBooksByUserId(createdUser.getId());
-            userService.deleteUserById(createdUser.getId());
-            throw new RepositoryException(e.getMessage());
+        if (createdUser.getId() == null || bookIdList.contains(null)) {
+            log.info("Rolling back create method");
+            throw new EmptyFieldException("User or book cannot have an empty or null values");
         }
+
+        return UserBookResponse.builder()
+                .userId(createdUser.getId())
+                .booksIdList(bookIdList)
+                .build();
     }
 
     public UserBookResponse updateUserWithBooks(UserBookRequest userBookRequest, Long userId) {
@@ -80,44 +80,52 @@ public class UserDataFacade {
         log.info("Updated user: {}", updatedUser);
 
         List<Long> temporaryIds = new ArrayList<>();
-        try{
-            List<Long> bookIdList = userBookRequest.getBookRequests()
-                    .stream()
-                    .filter(Objects::nonNull)
-                    .map(bookMapper::bookRequestToBookDto)
-                    .peek(bookDto -> bookDto.setUserId(updatedUser.getId()))
-                    .peek(mappedBookDto -> log.info("mapped book: {}", mappedBookDto))
-                    .map(bookService::updateBook)
-                    .peek(updatedBook -> {
-                        log.info("Updated book: {}", updatedBook);
-                        temporaryIds.add(updatedBook.getId());
-                    })
-                    .map(BookDto::getId)
-                    .toList();
-            log.info("Updated books ids: {}", bookIdList);
 
-            List<Long> allBooksIdList = bookService.getAllBooksByUserId(updatedUser.getId()).stream().map(BookDto::getId).toList();
-            log.info("All books ids: {}", allBooksIdList);
+        List<Long> bookIdList = userBookRequest.getBookRequests()
+                .stream()
+                .filter(Objects::nonNull)
+                .map(bookMapper::bookRequestToBookDto)
+                .peek(bookDto -> bookDto.setUserId(updatedUser.getId()))
+                .peek(mappedBookDto -> log.info("mapped book: {}", mappedBookDto))
+                .map(bookService::updateBook)
+                .peek(updatedBook -> {
+                    log.info("Updated book: {}", updatedBook);
+                    temporaryIds.add(updatedBook.getId());
+                })
+                .map(BookDto::getId)
+                .toList();
+        log.info("Updated books ids: {}", bookIdList);
 
-            return UserBookResponse.builder()
-                    .userId(updatedUser.getId())
-                    .booksIdList(allBooksIdList)
-                    .build();
-        } catch (RepositoryException e) {
+        List<Long> allBooksIdList = bookService.getAllBooksByUserId(updatedUser.getId()).stream().map(BookDto::getId).toList();
+        log.info("All books ids: {}", allBooksIdList);
+
+        if (updatedUser.getId() == null || bookIdList.contains(null)) {
+            log.info("Rolling back update method");
             temporaryIds.forEach(bookService::deleteBookById);
             if (!userExistsBeforeUpdate)
                 userService.deleteUserById(userId);
-            throw new RepositoryException(e.getMessage());
+            throw new EmptyFieldException("User or book cannot have an empty or null values");
         }
 
+        return UserBookResponse.builder()
+                .userId(updatedUser.getId())
+                .booksIdList(allBooksIdList)
+                .build();
     }
 
     public UserResponse getUserWithBooks(Long userId) {
         UserDto gotUser = userService.getUserById(userId);
         log.info("Got user: {}", gotUser);
 
-        List<BookDto> booksList = bookService.getAllBooksByUserId(gotUser.getId()).stream().toList();
+        if (gotUser.getId() == null) {
+            log.info("Rolling back get method");
+            throw new NoSuchEntityException("There is no User with requested id");
+        }
+
+        List<BookDto> booksList = bookService.getAllBooksByUserId(gotUser.getId());
         log.info("All user books: {}", booksList);
+
+
 
         return UserResponse.builder()
                 .userId(gotUser.getId())
@@ -130,6 +138,6 @@ public class UserDataFacade {
 
     public void deleteUserWithBooks(Long userId) {
         userService.deleteUserById(userId);
-        log.info("Delete user with id: {}", userId);
+        log.info("Delete user with books with userId: {}", userId);
     }
 }

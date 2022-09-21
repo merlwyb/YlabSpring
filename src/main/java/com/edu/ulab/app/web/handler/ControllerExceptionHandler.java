@@ -1,9 +1,8 @@
 package com.edu.ulab.app.web.handler;
 
 import com.edu.ulab.app.exception.EmptyFieldException;
-import com.edu.ulab.app.exception.NotFoundException;
 import com.edu.ulab.app.exception.NoSuchEntityException;
-import com.edu.ulab.app.exception.RepositoryException;
+import com.edu.ulab.app.exception.NotFoundException;
 import com.edu.ulab.app.web.response.BaseWebResponse;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +23,15 @@ public class ControllerExceptionHandler {
                 .body(new BaseWebResponse(createErrorMessage(exc)));
     }
 
-    @ExceptionHandler(RepositoryException.class)
-    public ResponseEntity<BaseWebResponse> handleRepositoryException(@NonNull final RepositoryException exc) {
+    @ExceptionHandler(EmptyFieldException.class)
+    public ResponseEntity<BaseWebResponse> handleEmptyFieldException(@NonNull final EmptyFieldException exc) {
+        log.error(exc.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new BaseWebResponse(createErrorMessage(exc)));
+    }
+
+    @ExceptionHandler(NoSuchEntityException.class)
+    public ResponseEntity<BaseWebResponse> handleNoSuchEntityException(@NonNull final NoSuchEntityException exc) {
         log.error(exc.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(new BaseWebResponse(createErrorMessage(exc)));
