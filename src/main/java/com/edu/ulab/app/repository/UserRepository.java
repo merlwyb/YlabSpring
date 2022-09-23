@@ -1,58 +1,22 @@
 package com.edu.ulab.app.repository;
 
-import com.edu.ulab.app.entity.User;
-import org.springframework.stereotype.Repository;
+import com.edu.ulab.app.entity.Person;
+import org.springframework.data.jpa.repository.Lock;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.*;
+import javax.persistence.LockModeType;
+import java.util.Optional;
 
-@Repository
-public class UserRepository {
+public interface UserRepository extends CrudRepository<Person, Long> {
 
-    private long id = 1;
-    private final Map<Long, User> userMap = new HashMap<>();
+    /*
+    User has books - book - started - comited status - other logic
+    User has books - book - in progress
+    User has books - book - finished
+     */
 
-    public User create(User user) {
-        if (checkOnNullAndEmptyValues(user))
-            return new User();
-        user.setId(id);
-        userMap.put(id++, user);
-        return user;
-    }
-
-    public User update(User user) {
-        if (user.getId() != null) {
-            if (checkOnNullAndEmptyValues(user))
-                return new User();
-            userMap.put(user.getId(), user);
-        } else {
-            return create(user);
-        }
-        return user;
-    }
-
-    public User getById(Long id) {
-        User user = userMap.get(id);
-        if (user == null) {
-            return new User();
-        }
-        return user;
-    }
-
-    public void deleteById(Long id) {
-        userMap.remove(id);
-    }
-
-    public boolean isPresent(Long id) {
-        return userMap.containsKey(id);
-    }
-
-    private boolean checkOnNullAndEmptyValues(User user) {
-        return user.getFullName() == null ||
-                user.getFullName().matches("^\s*$") ||
-                user.getTitle() == null ||
-                user.getTitle().matches("^\s*$") ||
-                user.getAge() <= 0;
-    }
-
-
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Query("select p from Person p where p.id = :id")
+    Optional<Person> findByIdForUpdate(long id);
 }
