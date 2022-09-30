@@ -51,7 +51,7 @@ public class UserServiceImplTest {
         person.setTitle("test title");
 
         Person savedPerson  = new Person();
-        savedPerson.setId(1);
+        savedPerson.setId(1L);
         savedPerson.setFullName("test name");
         savedPerson.setAge(11);
         savedPerson.setTitle("test title");

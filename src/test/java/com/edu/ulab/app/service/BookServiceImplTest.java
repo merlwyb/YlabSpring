@@ -40,7 +40,7 @@ public class BookServiceImplTest {
     void saveBook_Test() {
         //given
         Person person  = new Person();
-        person.setId(1);
+        person.setId(1L);
 
         BookDto bookDto = new BookDto();
         bookDto.setUserId(1L);
@@ -62,7 +62,7 @@ public class BookServiceImplTest {
         book.setPerson(person);
 
         Book savedBook = new Book();
-        savedBook.setId(1);
+        savedBook.setId(1L);
         savedBook.setPageCount(1000);
         savedBook.setTitle("test title");
         savedBook.setAuthor("test author");
