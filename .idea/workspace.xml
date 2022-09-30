@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b57c590f-18b1-4c26-ad98-d52a6eccedfc" name="Changes" comment="initial commit for dz4">
+    <list default="true" id="b57c590f-18b1-4c26-ad98-d52a6eccedfc" name="Changes" comment="some changes for previous commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/EmptyFieldException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/NoSuchEntityException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/EmptyFieldException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/NoSuchEntityException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImplTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImplTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/UserServiceImplTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/UserServiceImplTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/handler/ControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/handler/ControllerExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/response/UserResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dz4" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,9 +69,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/ksenia.boiko/Downloads/app/src/main/java/com/edu/ulab/app/web/handler",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "D:/Projects/YlabSpring/src/main/java/com/edu/ulab/app/exception",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "spring.configuration.checksum": "d2a57dc1d883fd21fb9951699df71cc7"
+    "spring.configuration.checksum": "b660095e554417684a9a3ad4cdbcc21b"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -72,6 +82,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\YlabSpring\src\main\java\com\edu\ulab\app\exception" />
       <recent name="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/handler" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -105,6 +116,7 @@
       <workItem from="1662893357893" duration="9797000" />
       <workItem from="1663189766954" duration="5140000" />
       <workItem from="1663695573057" duration="17177000" />
+      <workItem from="1663996979846" duration="9998000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for dz4">
       <created>1663913888269</created>
@@ -113,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663913888269</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some changes for previous commit">
+      <created>1663914724484</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663914724484</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,63 +152,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit for dz4" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit for dz4" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
-          <line>48</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
-          <line>50</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/UserServiceImpl.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="some changes for previous commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes for previous commit" />
   </component>
 </project>
