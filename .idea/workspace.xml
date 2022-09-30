@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b57c590f-18b1-4c26-ad98-d52a6eccedfc" name="Changes" comment="some changes for previous commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/EmptyFieldException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/NoSuchEntityException.java" afterDir="false" />
+    <list default="true" id="b57c590f-18b1-4c26-ad98-d52a6eccedfc" name="Changes" comment="dz4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/entity/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/EmptyFieldException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/exception/NoSuchEntityException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImplTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImplTemplate.java" afterDir="false" />
@@ -18,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/handler/ControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/handler/ControllerExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/response/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +39,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -61,7 +62,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -69,27 +69,106 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "D:/Projects/YlabSpring/src/main/java/com/edu/ulab/app/exception",
+    "last_opened_file_path": "/Users/ksenia.boiko/Downloads/app/src/test/resources/sql",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "spring.configuration.checksum": "b660095e554417684a9a3ad4cdbcc21b"
+    "spring.configuration.checksum": "d2a57dc1d883fd21fb9951699df71cc7"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "h2"
+      "h2",
+      "postgresql"
     ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\YlabSpring\src\main\java\com\edu\ulab\app\exception" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/handler" />
+      <recent name="$PROJECT_DIR$/src/test/resources/sql" />
+      <recent name="$PROJECT_DIR$/src/test/java/com/edu/ulab/app/" />
+      <recent name="$PROJECT_DIR$/src/test/java/com/edu/ulab/app" />
+      <recent name="$PROJECT_DIR$/src/main/resources/changelog/changes" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/db" />
+      <recent name="$PROJECT_DIR$/src/test/resources/sql" />
+      <recent name="$PROJECT_DIR$/src/test/resources/sql/insert.sql" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.edu.ulab.app.web.response" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.AppApplication (1)">
+    <configuration name="BookRepositoryTest.findAllBadges_thenAssertDmlCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.edu.ulab.app.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.edu.ulab.app.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.edu.ulab.app.repository.BookRepositoryTest" />
+      <option name="METHOD_NAME" value="findAllBadges_thenAssertDmlCount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceImplTest.saveBook_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.edu.ulab.app.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.edu.ulab.app.service" />
+      <option name="MAIN_CLASS_NAME" value="com.edu.ulab.app.service.BookServiceImplTest" />
+      <option name="METHOD_NAME" value="saveBook_Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.insertPerson_thenAssertDmlCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.edu.ulab.app.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.edu.ulab.app.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.edu.ulab.app.repository.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="insertPerson_thenAssertDmlCount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.savePerson_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.edu.ulab.app.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.edu.ulab.app.service" />
+      <option name="MAIN_CLASS_NAME" value="com.edu.ulab.app.service.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="savePerson_Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="YlabSpring" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.edu.ulab.app.AppApplication" />
@@ -104,6 +183,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceImplTest.savePerson_Test" />
+        <item itemvalue="JUnit.BookRepositoryTest.findAllBadges_thenAssertDmlCount" />
+        <item itemvalue="JUnit.UserRepositoryTest.insertPerson_thenAssertDmlCount" />
+        <item itemvalue="JUnit.BookServiceImplTest.saveBook_Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,43 +203,79 @@
       <workItem from="1662893357893" duration="9797000" />
       <workItem from="1663189766954" duration="5140000" />
       <workItem from="1663695573057" duration="17177000" />
-      <workItem from="1663996979846" duration="9998000" />
+      <workItem from="1664312086568" duration="10988000" />
+      <workItem from="1664468408611" duration="380000" />
     </task>
-    <task id="LOCAL-00001" summary="initial commit for dz4">
-      <created>1663913888269</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1663913888269</updated>
-    </task>
-    <task id="LOCAL-00002" summary="some changes for previous commit">
-      <created>1663914724484</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1663914724484</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initial commit for dz4" />
-    <MESSAGE value="some changes for previous commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes for previous commit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
+          <line>48</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
+          <line>50</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/facade/UserDataFacade.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/web/UserController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/UserServiceImpl.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/BookServiceImpl.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/edu/ulab/app/service/impl/UserServiceImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
