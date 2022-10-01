@@ -82,9 +82,4 @@ public class UserServiceImpl implements UserService {
                 user.getAge() <= 0)
             throw new EmptyFieldException("User fields cannot be equals null or empty");
     }
-
-    private void checkOnUniqueTitle(String userTitle) {
-        if (userRepository.existsByTitle(userTitle))
-            throw new NotUniqueException("User title is not unique");
-    }
 }
